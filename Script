@@ -1,0 +1,253 @@
+--// UnExceptional Script Made by: Mob \\--
+
+
+--// Values
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("UnExceptional -By Mob", "DarkTheme")
+
+local Tab = Window:NewTab("Main")
+
+local TabNew = Window:NewTab("Teleport Stuff")
+
+local TabNew2 = Window:NewTab("Trainer")
+
+local TabNew4 = Window:NewTab("Buy Item")
+
+local TabNew3 = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Auto/Money")
+
+local Section1 = TabNew:NewSection("Teleport Places")
+
+local Section2 = TabNew2:NewSection("Learn Trainers all cost 50k")
+
+local Section3 = TabNew3:NewSection("Misc")
+
+local Section4 = TabNew4:NewSection("Buy Training Items")
+
+Section:NewButton("Get all flags", "AutoFucking Money man", function()
+    print("Clicked")
+    for i, v in pairs(game:GetService("Workspace").TempFlags:GetDescendants()) do
+        print(v)
+        if v.Name == "ClickDetector" then
+            print("Fired")
+            fireclickdetector(v)
+        end
+    end
+end)
+
+Section:NewButton("Buy Burgir", "Burgir", function()
+    print("Clicked")
+    for i, v in pairs(game:GetService("Workspace").Important["Burger Purchase"]:GetDescendant()) do
+        print(v)
+        if v.Name == "ClickDetector" then
+            print("Fired")
+            fireclickdetector(v)    
+        end
+    end
+end)
+
+Section:NewButton("Fix Broken Bones", "Broken shit", function()
+    print("Clicked")
+    for i, v in pairs(game:GetService("Workspace")["Doctor pad"]:GetDescendant()) do
+        print(v)
+        if v.Name == "ClickDetector" then
+            print("Fired")
+            fireclickdetector(v)
+        end
+    end
+end)
+
+--// Section only \\--
+
+Section:NewButton("Change Potential", "Reroll Your Potential", function()
+    print("Clicked")
+    game:GetService("ReplicatedStorage").Events.RerollPotential:FireServer()
+end)
+
+Section:NewButton("Reroll Ability (click once)", "Reroll Your Ability", function()
+    for i, v in pairs(game:GetService("Workspace")["Ability Reroll"]:GetDescendant()) do
+        print(v)
+        if v.Name == "ClickDetector" then
+            print("Fired")
+            fireclickdetector(v)
+        end
+    end
+end)
+
+Section:NewToggle("Auto Punch (face the punching bag first)", "no need for a fucking auto clicker man", function(v)
+    _G.autoPunch = v
+    while true do
+        if not _G.autoPunch then return end
+        local Event = game:GetService("ReplicatedStorage").Events.Combat
+        Event:FireServer()        
+        wait()
+    end
+end)
+
+Section:NewToggle("Auto Speed Training (Requires a Tool)", "you need the tool man", function(i)
+    _G.autoSpeed = i
+    while true do
+       local args = {[1] = "Speed Training"}
+       game:GetService("Players").LocalPlayer.Character:FindFirstChild("Speed Training").LocalScript.Training:FireServer(unpack(args))
+       wait(0.1)
+    end
+end)
+
+Section:NewToggle("Auto Recovery Training (Requires a Tool)", "you need the tool man", function(h)
+    _G.autoSpeed = h
+    while true do
+       local args = {[1] = "Recovery Training"}
+       game:GetService("Players").LocalPlayer.Character:FindFirstChild("Recovery Training").LocalScript.Training:FireServer(unpack(args))
+       wait(0.1)
+    end
+end)
+
+--// Section 1 only \\--
+
+Section1:NewButton("TP Hospital", "Teleports you to Hospital", function()
+    print("Clicked")
+    game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(1002.7256469726562, 246.7030029296875, -277.19683837890625)
+end)
+
+Section1:NewButton("TP Burgir", "Teleports you to Burgir", function()
+    print("Clicked")
+    game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(-55.04804992675781, 246.6836395263672, -263.3495178222656)
+end)
+
+Section1:NewButton("TP Gym", "Teleports you to Gym", function()
+    print("Clicked")
+    game.Players.LocalPlayer.character.HumanoidRootPart.CFrame = CFrame.new(-428.4222412109375, 246.6274871826172, -510.4456787109375)
+end)
+
+--// Section 2 only \\--
+
+Section2:NewButton("TaekWando", "Learn TaekWando", function()
+    local A_1 = "Taekwando"
+    local Event = game:GetService("ReplicatedStorage").Events.LearnStyle
+    Event:FireServer(A_1)
+    print("Learned")
+end)
+
+Section2:NewButton("LowGuard Boxing", "Learn LowGuard Boxing", function()
+    local A_1 = "Boxing"
+    local Event = game:GetService("ReplicatedStorage").Events.LearnStyle
+    Event:FireServer(A_1)
+    print("Learned")
+end)
+
+Section2:NewButton("Normal Boxing", "Learn Normal Boxing", function()
+    local A_1 = "Boxing2"
+    local Event = game:GetService("ReplicatedStorage").Events.LearnStyle
+    Event:FireServer(A_1)
+    print("Learned")
+end)
+
+Section2:NewButton("Street Fighter", "Learn StreetFight", function()
+    local A_1 = "StreetFighter"
+    local Event = game:GetService("ReplicatedStorage").Events.LearnStyle
+    Event:FireServer(A_1)
+    print("Learned")
+end)
+
+Section2:NewButton("Wrestling", "Learn Wrestling", function()
+    local A_1 = "Wrestling"
+    local Event = game:GetService("ReplicatedStorage").Events.LearnStyle
+    Event:FireServer(A_1)
+    print("Learned")
+end)
+
+Section2:NewButton("Sumo", "Learn Sumo", function()
+    local A_1 = "Sumo"
+    local Event = game:GetService("ReplicatedStorage").Events.LearnStyle
+    Event:FireServer(A_1)
+    print("Learned")
+end)
+
+Section2:NewButton("MuayThai", "Learn MuayThai", function()
+    local A_1 = "MuayThai"
+    local Event = game:GetService("ReplicatedStorage").Events.LearnStyle
+    Event:FireServer(A_1)
+    print("Learned")
+end)
+
+--// Section 3 only \\--
+
+Section3:NewSlider("WalkSpeed", "Change Walk Speed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section3:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+Section3:NewToggle("anti afk", "...", function(afk)
+    _G.antiAfk = afk
+    local VirtualUser = game:GetService("VirtualUser")
+    local RNG = Random.new()
+
+   while true do
+    if not _G.antiAfk then return end
+    local screensize = workspace.CurrentCamera.ViewportSize
+    local position = Vector2.new(
+       math.floor(screensize.X / 2) + RNG:NextInteger(-25, 25),
+       math.floor(screensize.Y / 2) + RNG:NextInteger(-25, 25)
+   )
+   task.wait(15 + RNG:NextNumber(0, 5))
+   VirtualUser:Button2Down(position)
+   task.wait(RNG:NextNumber(0.1, 0.4))
+   VirtualUser:Button2Up(position)
+   print("Afk On")
+  end
+end)
+
+--// Section 4 Only \\--
+
+Section4:NewButton("Buy Speed Training", "just an item for stats", function()
+    for i, v in pairs(game:GetService("Workspace").Important["Speed Training"]:GetDescendants()) do
+        print(v)
+        if v.Name == "ClickDetector" then
+            print("Fired")
+            print("Item Purchased")
+            fireclickdetector(v)
+        end
+    end
+end)
+
+Section4:NewButton("Buy Recovery Training", "just an item for stats", function()
+    for i, v in pairs(game:GetService("Workspace").Important["Recovery Training"]:GetDescendants()) do
+        print(v)
+        if v.Name == "ClickDetector" then
+            print("Fired")
+            print("Item Purchased")
+            fireclickdetector(v)
+        end
+    end
+end)
+
+Section4:NewButton("Buy Power Training", "just an item for stats", function()
+    for i, v in pairs(game:GetService("Workspace").Important["Recovery Training"]["Power Training"]:GetDescendants()) do
+        print(v)
+        if v.Name == "ClickDetector" then
+            print("Fired")
+            print("Item Purchased")
+            fireclickdetector(v)
+        end
+    end
+end)
+
+Section4:NewButton("Buy Defense Training", "just an item for stats", function()
+    for i, v in pairs(game:GetService("Workspace").Important["Recovery Training"]["Defense Training"]:GetDescendants()) do
+        print(v)
+        if v.Name == "ClickDetector" then
+            print("Fired")
+            print("Item Purchased")
+            fireclickdetector(v)
+        end
+    end
+end)
+
+--// Credits To Mob \\--
+Section3:NewLabel("Credits to Mob")
