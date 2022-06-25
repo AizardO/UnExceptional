@@ -39,8 +39,8 @@ Section:NewButton("Get all flags", "steal some children flags", function()
 end)
 
 Section:NewButton("1 shot arlo", "fuck em up", function()
-    print("Clicked")
     game:GetService("Workspace")["Arlo [BOSS]"].Head:remove()
+    print("Clicked")
 end)
 
 Section:NewButton("Buy Burgir", "Burgir", function()
