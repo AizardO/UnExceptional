@@ -27,7 +27,7 @@ local Section3 = TabNew3:NewSection("Misc")
 
 local Section4 = TabNew4:NewSection("Buy Training Items")
 
-Section:NewButton("Get all flags", "AutoFucking Money man", function()
+Section:NewButton("Get all flags", "steal some children flags", function()
     print("Clicked")
     for i, v in pairs(game:GetService("Workspace").TempFlags:GetDescendants()) do
         print(v)
@@ -40,7 +40,7 @@ end)
 
 Section:NewButton("Buy Burgir", "Burgir", function()
     print("Clicked")
-    for i, v in pairs(game:GetService("Workspace").Important["Burger Purchase"]:GetDescendant()) do
+    for i, v in pairs(game:GetService("Workspace").Important["Burger Purchase"]:GetDescendants()) do
         print(v)
         if v.Name == "ClickDetector" then
             print("Fired")
@@ -51,7 +51,7 @@ end)
 
 Section:NewButton("Fix Broken Bones", "Broken shit", function()
     print("Clicked")
-    for i, v in pairs(game:GetService("Workspace")["Doctor pad"]:GetDescendant()) do
+    for i, v in pairs(game:GetService("Workspace")["Doctor pad"]:GetDescendants()) do
         print(v)
         if v.Name == "ClickDetector" then
             print("Fired")
@@ -68,7 +68,7 @@ Section:NewButton("Change Potential", "Reroll Your Potential", function()
 end)
 
 Section:NewButton("Reroll Ability (click once)", "Reroll Your Ability", function()
-    for i, v in pairs(game:GetService("Workspace")["Ability Reroll"]:GetDescendant()) do
+    for i, v in pairs(game:GetService("Workspace")["Ability Reroll"]:GetDescendants()) do
         print(v)
         if v.Name == "ClickDetector" then
             print("Fired")
