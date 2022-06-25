@@ -3,7 +3,7 @@
 
 --// Values
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/AizardO/UnExceptional/main/Script"))()
 
 local Window = Library.CreateLib("UnExceptional -By Mob", "DarkTheme")
 
@@ -36,6 +36,11 @@ Section:NewButton("Get all flags", "steal some children flags", function()
             fireclickdetector(v)
         end
     end
+end)
+
+Section:NewButton("1 shot arlo", "fuck em up", function()
+    print("Clicked")
+    game:GetService("Workspace")["Arlo [BOSS]"].Head:remove()
 end)
 
 Section:NewButton("Buy Burgir", "Burgir", function()
@@ -179,7 +184,7 @@ Section3:NewSlider("WalkSpeed", "Change Walk Speed", 500, 0, function(s) -- 500 
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
-Section3:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+Section3:NewKeybind("", "KeybindInfo", Enum.KeyCode.F, function()
 	Library:ToggleUI()
 end)
 
